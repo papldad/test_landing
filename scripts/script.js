@@ -1,11 +1,13 @@
 $(document).ready(function () {
-    const wistiaID = "sxs8jbdqal";
-    // iframe, async, async_popover, playlist_iframe, playlist_api, playlist_popver, and open_graph_tag
-    const wistiaType = "async";
+    getVideo();
+    getButton();
+});
 
-    const mainVideo = $('#main-video').innerWidth();
-    console.log(mainVideo);
-    const videoWidth = mainVideo;
+function getVideo() {
+    const wistiaID = "sxs8jbdqal";
+    // wistiaType: iframe, async, async_popover, playlist_iframe, playlist_api, playlist_popver, and open_graph_tag
+    const wistiaType = "async";
+    const videoWidth = $('#main-video').innerWidth();
 
     const url = "https://fast.wistia.net/oembed?url=http://home.wistia.com/medias/" +
         wistiaID +
@@ -13,8 +15,31 @@ $(document).ready(function () {
         "&videoWidth=" + videoWidth;
 
     $.get(url, function (data) {
-        console.log(data); // HTML content of the jQuery.ajax page
         $("#main-video").html(data.html);
     }
     );
-});
+}
+
+function getButton() {
+    let userAge = null;
+    let userTest = null;
+
+    $('select[name="age"]').change(function () {
+        userAge = $(this).val();
+        checkQuestion();
+    });
+
+    $('select[name="test"]').change(function () {
+        userTest = $(this).val();
+        checkQuestion();
+    });
+
+
+    function checkQuestion() {
+        if (userAge == "yes" && userTest == "2") {
+            console.log(true);
+            $('#secret-button').css('display', 'inline-block');
+        }
+        return;
+    }
+}
