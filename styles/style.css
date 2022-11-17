@@ -38,10 +38,7 @@ body {
 
 }
 
-section {
-    /* width: 100%; */
-
-    display: flex;
+section {display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -95,6 +92,11 @@ _______MAIN______
     flex-direction: row;
     justify-content: space-between;
     gap: 1em;
+}
+
+#questions select {
+    color: white;
+    background-color: black;
 }
 
 #secret-button {

@@ -37,7 +37,6 @@ function getButton() {
 
     function checkQuestion() {
         if (userAge == "yes" && userTest == "2") {
-            console.log(true);
             $('#secret-button').css('display', 'inline-block');
         }
         return;
