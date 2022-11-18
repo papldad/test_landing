@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="./styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <title>SomePage</title>
+
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '435506941915593');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=435506941915593&ev=PageView
+    &noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+
 </head>
 
 <body>
@@ -43,7 +70,7 @@
                     </select>
                 </div>
 
-                <a id="secret-button" href="https://pwpgenerator.com/fpvpwp?p1=%5BSUBID%5D&p2=%5BCLICKID%5D">Go!</a>
+                <button id="secret-button" onclick="clickBtn()">Send value FB Pixel!</a>
 
             </div>
 
@@ -71,6 +98,8 @@
     </section>
 
     <script src="./scripts/script.js"></script>
+
+
 </body>
 
 </html>

@@ -100,7 +100,7 @@ _______MAIN______
 }
 
 #secret-button {
-    display: none;
+    display: inline-block;
     color: black;
     font-size: 125%;
     font-weight: 700;

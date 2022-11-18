@@ -1,6 +1,6 @@
 $(document).ready(function () {
     getVideo();
-    getButton();
+    sendData();
 });
 
 function getVideo() {
@@ -20,25 +20,22 @@ function getVideo() {
     );
 }
 
-function getButton() {
-    let userAge = null;
-    let userTest = null;
+function sendData() {
 
     $('select[name="age"]').change(function () {
         userAge = $(this).val();
-        checkQuestion();
     });
 
     $('select[name="test"]').change(function () {
         userTest = $(this).val();
-        checkQuestion();
     });
 
+}
 
-    function checkQuestion() {
-        if (userAge == "yes" && userTest == "2") {
-            $('#secret-button').css('display', 'inline-block');
-        }
-        return;
-    }
+
+let userAge = "<no data>";
+let userTest = "<no data>";
+
+function clickBtn() {
+    fbq('track', 'SomeData', { 'age': userAge, 'answer': userTest });
 }
